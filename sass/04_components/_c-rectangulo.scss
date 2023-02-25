@@ -1,0 +1,5 @@
+.c-rectangulo{
+    border: solid 1px red;
+    width: clamp(230px,40vw,400px);
+    height: max(100px,50vh);
+}

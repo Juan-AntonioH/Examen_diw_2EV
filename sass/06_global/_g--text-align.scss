@@ -1,0 +1,15 @@
+@each $clave,$valor in $text-align {
+    .g--text-align-#{$clave} {
+        text-align: $valor;
+    }
+}
+
+@each $tamanyo, $media in $break-points {
+    @media(min-width:$media) {
+        @each $clave,$valor in $text-align {
+            .g--text-align-#{$clave}\@#{$tamanyo} {
+                text-align: $valor;
+            }
+        }
+    }
+}

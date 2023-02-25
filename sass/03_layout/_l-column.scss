@@ -1,0 +1,19 @@
+.l-columns {
+    display: grid;
+
+    @for $i from 1 to $columnas+1 {  
+      &--#{$i}{
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+
+    @each $tamanyo, $media in $break-points {
+      @media(min-width:$media) {
+        @for $i from 1 to $columnas+1 {  
+          &--#{$i}\@#{$tamanyo}{
+            grid-template-columns: repeat($i, 1fr);
+          }
+        }
+      }
+    }
+}
